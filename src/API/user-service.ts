@@ -13,4 +13,15 @@ export default class UserService {
     const data = await response.json();
     return data;
   }
+
+  static async getById(id: number): Promise<IUser> {
+    const response = await fetch(`${BASE_URL}/users/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`Произошла ошибка! Статус: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  }
 }
