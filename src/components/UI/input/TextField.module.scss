@@ -1,0 +1,19 @@
+.textField {
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 10px;
+  line-height: 12px;
+  width: 100%;
+
+  outline: none;
+
+  &:disabled {
+    color: rgba($color: #000, $alpha: 0.3);
+  }
+}
+
+.textArea {
+  min-height: 55px;
+  resize: none;
+}
