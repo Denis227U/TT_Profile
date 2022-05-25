@@ -15,8 +15,6 @@ const Profile: React.FC<ProfileProps> = ({
   isValidForm,
   handleSubmitForm,
 }) => {
-  console.log('profileForm:', profileForm);
-
   const [editMode, setEditMode] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

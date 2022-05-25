@@ -1,5 +1,6 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import UserService from '../../API/user-service';
+import Error from '../../components/Error/Error';
 import Preloader, {
   PreloaderColor,
 } from '../../components/UI/preloader/Preloader';
@@ -35,11 +36,7 @@ const UsersListContainer: React.FC = () => {
   }
 
   if (usersError) {
-    return (
-      <div>
-        Произошла ошибка: <span style={{ color: 'crimson' }}>{usersError}</span>
-      </div>
-    );
+    return <Error error={usersError} />;
   }
 
   return <UsersList users={sortedUsers} />;

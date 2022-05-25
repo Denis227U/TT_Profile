@@ -7,7 +7,7 @@ export default class UserService {
     const response = await fetch(`${BASE_URL}/users?_limit=${limit}`);
 
     if (!response.ok) {
-      throw new Error(`Произошла ошибка! Статус: ${response.status}`);
+      throw new Error(`Статус ошибки: ${response.status}`);
     }
 
     const data = await response.json();
@@ -18,7 +18,7 @@ export default class UserService {
     const response = await fetch(`${BASE_URL}/users/${id}`);
 
     if (!response.ok) {
-      throw new Error(`Произошла ошибка! Статус: ${response.status}`);
+      throw new Error(`Статус ошибки: ${response.status}`);
     }
 
     const data = await response.json();

@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UserService from '../../API/user-service';
+import Error from '../../components/Error/Error';
 import Preloader, {
   PreloaderColor,
 } from '../../components/UI/preloader/Preloader';
@@ -60,12 +61,7 @@ const ProfileContainer: React.FC = () => {
   }
 
   if (userProfileError) {
-    return (
-      <div>
-        Произошла ошибка:{' '}
-        <span style={{ color: 'crimson' }}>{userProfileError}</span>
-      </div>
-    );
+    return <Error error={userProfileError} />;
   }
 
   return (

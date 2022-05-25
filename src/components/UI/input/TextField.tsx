@@ -20,8 +20,6 @@ const TextField: React.FC<TextFieldProps> = ({
 }) => {
   const rootClass = [cl.textField];
 
-  console.log('isNotValid', isNotValid);
-
   if (isNotValid) {
     rootClass.push(cl.error);
   }
