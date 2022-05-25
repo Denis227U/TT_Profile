@@ -6,24 +6,23 @@ import cl from './Sidebar.module.scss';
 interface SortBlockProps {
   sortOptions?: ISort[];
   isActiveSortBlock: boolean;
-  isActiveSort: string;
+  activeSort: string;
   selectSort: (e: React.MouseEvent<HTMLButtonElement>, option: ISort) => void;
 }
 
 const Sidebar: React.FC<SortBlockProps> = ({
   sortOptions,
   isActiveSortBlock,
-  isActiveSort,
+  activeSort,
   selectSort,
 }) => {
   return (
     <aside className={cl.sideBar}>
-      {' '}
       {
         <SortBlock
           sortOptions={sortOptions}
           isActiveSortBlock={isActiveSortBlock}
-          isActiveSort={isActiveSort}
+          activeSort={activeSort}
           selectSort={selectSort}
         />
       }

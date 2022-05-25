@@ -6,14 +6,14 @@ import cl from './SortBlock.module.scss';
 interface SortBlockProps {
   sortOptions?: ISort[];
   isActiveSortBlock: boolean;
-  isActiveSort: string;
+  activeSort: string;
   selectSort: (e: React.MouseEvent<HTMLButtonElement>, option: ISort) => void;
 }
 
 const SortBlock: React.FC<SortBlockProps> = ({
   sortOptions,
   isActiveSortBlock,
-  isActiveSort,
+  activeSort,
   selectSort,
 }) => {
   return (
@@ -23,7 +23,15 @@ const SortBlock: React.FC<SortBlockProps> = ({
         {sortOptions &&
           sortOptions.map((option) => (
             <div className={cl.sortTag} key={option.value}>
-              <MainButton onClick={(e) => selectSort(e, option)}>
+              <MainButton
+                onClick={(e) => selectSort(e, option)}
+                disabled={isActiveSortBlock}
+                className={
+                  !isActiveSortBlock && activeSort === option.value
+                    ? 'active toggle'
+                    : ''
+                }
+              >
                 {option.name}
               </MainButton>
             </div>

@@ -23,7 +23,7 @@ const SidebarContainer: React.FC = () => {
       sortOptions={sContext?.sortOptions}
       isActiveSortBlock={!match}
       selectSort={selectSort}
-      isActiveSort={activeOption}
+      activeSort={activeOption}
     />
   );
 };
