@@ -1,0 +1,37 @@
+.user {
+  background-color: var(--color-main-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+
+  .userBlock {
+    .userInfo {
+      margin-bottom: 7px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .userInfoLabel {
+        font-size: 11px;
+        line-height: 13px;
+        color: var(--color-main-light-text);
+        margin-right: 7px;
+
+        &::after {
+          content: ':';
+        }
+      }
+    }
+  }
+
+  .userLink {
+    font-size: 12px;
+    line-height: 14px;
+    color: #4b51ef;
+    text-decoration: none;
+  }
+}
