@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
-import Sidebar from './Sidebar/Sidebar';
+import SidebarContainer from './Sidebar/SidebarContainer';
 
 const Layout = () => {
   return (
     <div className="app-wrapper">
-      <Sidebar />
+      <SidebarContainer />
 
       <main className="app-content">
         <Outlet />

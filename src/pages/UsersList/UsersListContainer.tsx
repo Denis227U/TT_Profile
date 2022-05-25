@@ -1,11 +1,16 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import UserService from '../../API/user-service';
+import { SortContext } from '../../context';
 import { useFetching } from '../../hooks/useFetching';
+import { useSortedUsers } from '../../hooks/useUsers';
 import { IUser } from '../../models/IUser';
 import UsersList from './UsersList';
 
 const UsersListContainer: React.FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
+
+  const sContext = useContext(SortContext);
+  const sortedUsers = useSortedUsers(users, sContext?.sort);
 
   const fetchUsersCb = useCallback(async () => {
     const data = await UserService.getAll();
@@ -34,7 +39,7 @@ const UsersListContainer: React.FC = () => {
     );
   }
 
-  return <UsersList users={users} />;
+  return <UsersList users={sortedUsers} />;
 };
 
 export default UsersListContainer;

@@ -1,0 +1,22 @@
+.sortBlock {
+  padding: 35px 20px;
+}
+
+.sortTitle {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.sortTags {
+}
+
+.sortTag {
+  margin-bottom: 10px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
