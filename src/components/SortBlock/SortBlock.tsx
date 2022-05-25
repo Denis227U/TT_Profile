@@ -1,5 +1,6 @@
 import React from 'react';
 import { ISort } from '../../models/ISort';
+import MainButton from '../UI/button/MainButton';
 import cl from './SortBlock.module.scss';
 
 interface SortBlockProps {
@@ -22,9 +23,9 @@ const SortBlock: React.FC<SortBlockProps> = ({
         {sortOptions &&
           sortOptions.map((option) => (
             <div className={cl.sortTag} key={option.value}>
-              <button onClick={(e) => selectSort(e, option)}>
+              <MainButton onClick={(e) => selectSort(e, option)}>
                 {option.name}
-              </button>
+              </MainButton>
             </div>
           ))}
       </div>

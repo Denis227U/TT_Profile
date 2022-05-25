@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MainButton from '../../components/UI/button/MainButton';
 import TextField from '../../components/UI/input/TextField';
 import { IProfileForm } from '../../models/IProfileForm';
 import cl from './Profile.module.scss';
@@ -28,9 +29,9 @@ const Profile: React.FC<ProfileProps> = ({
     <div>
       <div className={cl.header}>
         <h2>Профиль пользоваетля</h2>
-        <button onClick={() => setEditMode((prev) => !prev)}>
+        <MainButton onClick={() => setEditMode((prev) => !prev)}>
           Редактировать
-        </button>
+        </MainButton>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -182,9 +183,9 @@ const Profile: React.FC<ProfileProps> = ({
         </div>
 
         <div className={cl.btns}>
-          <button className="sendBtn" disabled={!(editMode && isValidForm)}>
+          <MainButton className="sendBtn" disabled={!(editMode && isValidForm)}>
             Отправить
-          </button>
+          </MainButton>
         </div>
       </form>
     </div>
