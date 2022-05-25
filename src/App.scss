@@ -1,0 +1,9 @@
+.app-wrapper {
+  display: grid;
+  grid-template-columns: 152px 1fr;
+  min-height: 100vh;
+}
+
+.app-content {
+  padding: 13px 36px;
+}
