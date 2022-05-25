@@ -1,6 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import UserService from '../../API/user-service';
+import Preloader, {
+  PreloaderColor,
+} from '../../components/UI/preloader/Preloader';
 import { useFetching } from '../../hooks/useFetching';
 import { useTextField } from '../../hooks/useTextField';
 import { IProfileForm, IValidForm } from '../../models/IProfileForm';
@@ -53,7 +56,7 @@ const ProfileContainer: React.FC = () => {
   const isValidForm = checkValidForm(validateInfo);
 
   if (isUserProfileLoading) {
-    return <div>Loading...</div>;
+    return <Preloader color={PreloaderColor.secondary} />;
   }
 
   if (userProfileError) {

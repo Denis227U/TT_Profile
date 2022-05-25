@@ -1,5 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import UserService from '../../API/user-service';
+import Preloader, {
+  PreloaderColor,
+} from '../../components/UI/preloader/Preloader';
 import { SortContext } from '../../context';
 import { useFetching } from '../../hooks/useFetching';
 import { useSortedUsers } from '../../hooks/useUsers';
@@ -28,7 +31,7 @@ const UsersListContainer: React.FC = () => {
   }, [fetchUsers]);
 
   if (isUsersLoading) {
-    return <div>Loading...</div>;
+    return <Preloader color={PreloaderColor.secondary} />;
   }
 
   if (usersError) {
